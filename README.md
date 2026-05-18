@@ -2,7 +2,7 @@
 
 A full-stack web app that lets you upload documents and have a streaming conversation with an AI about their contents. Powered by Claude Haiku via the Anthropic API.
 
-[Demo](docs/demo.gif)
+![Demo](docs/demo.gif)
 
 ## Features
 
