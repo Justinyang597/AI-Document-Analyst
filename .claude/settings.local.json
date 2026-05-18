@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv\\\\Scripts\\\\pip install *)",
+      "WebFetch(domain:platform.openai.com)",
+      "WebSearch"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+flask
+flask-cors
+gunicorn
+Flask-SQLAlchemy
+werkzeug
+python-dotenv
+anthropic
+openai
+google-genai
+PyMuPDF
+python-docx

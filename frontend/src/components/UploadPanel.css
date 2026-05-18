@@ -1,0 +1,134 @@
+.upload-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.upload-hero {
+  text-align: center;
+  max-width: 420px;
+}
+
+.upload-hero h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.upload-hero p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.upload-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  min-height: 260px;
+  padding: 2.5rem 2rem;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: var(--shadow-sm);
+}
+
+.upload-zone:hover,
+.upload-zone.drag-over {
+  border-color: var(--accent);
+  background: var(--gemini-soft);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.upload-zone.loading {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.upload-icon-wrap {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--gemini-soft), #fff);
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(26, 115, 232, 0.15);
+}
+
+.upload-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.upload-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.upload-btn {
+  padding: 0.55rem 1.35rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 9px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px var(--accent-glow);
+  transition: background 0.15s, transform 0.1s;
+}
+
+.upload-zone:hover .upload-btn {
+  background: var(--accent-hover);
+}
+
+.upload-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.upload-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  max-width: 520px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.feature-icon {
+  color: var(--accent);
+  font-size: 0.75rem;
+}

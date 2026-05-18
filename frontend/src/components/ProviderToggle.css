@@ -1,0 +1,35 @@
+.provider-toggle {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.25rem;
+}
+
+.provider-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: calc(var(--radius) - 2px);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.provider-btn:hover:not(.active) {
+  background: var(--bg-surface);
+  color: var(--text);
+}
+
+.provider-btn.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.provider-btn.active.claude  { background: #c26b2b; }
+.provider-btn.active.openai  { background: #10a37f; }
+.provider-btn.active.gemini  { background: #1a73e8; }

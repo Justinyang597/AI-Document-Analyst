@@ -1,0 +1,238 @@
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.sidebar-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.refresh-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent-glow);
+  background: var(--gemini-soft);
+}
+
+.doc-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 0.75rem;
+}
+
+.doc-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-muted);
+}
+
+.empty-illus {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.doc-empty p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.doc-empty span {
+  font-size: 0.8rem;
+}
+
+.doc-list-item {
+  margin-bottom: 0.2rem;
+}
+
+.doc-item-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.25rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.doc-item-row:hover {
+  background: var(--bg-subtle);
+}
+
+.doc-item-row.active {
+  background: var(--gemini-soft);
+  border-color: rgba(26, 115, 232, 0.25);
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-item {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+  padding: 0.7rem 0.5rem 0.7rem 0.75rem;
+  border-radius: var(--radius);
+}
+
+.doc-delete {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  margin: 0.35rem 0.35rem 0.35rem 0;
+  border-radius: 8px;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.15s, background 0.15s, color 0.15s;
+}
+
+.doc-item-row:hover .doc-delete,
+.doc-item-row.active .doc-delete {
+  opacity: 1;
+}
+
+.doc-delete:hover:not(:disabled) {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.doc-delete:disabled {
+  opacity: 1;
+  cursor: wait;
+}
+
+.delete-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--danger);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.file-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.file-icon.pdf {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.file-icon.txt {
+  background: var(--gemini-soft);
+  color: var(--accent);
+}
+
+.file-icon.docx {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+[data-theme="dark"] .file-icon.pdf {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+[data-theme="dark"] .file-icon.docx {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+
+.doc-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-filename {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doc-date {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .app {
+    flex-direction: column;
+  }
+}
